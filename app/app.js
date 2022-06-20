@@ -129,7 +129,7 @@ var appWidget = {
           appWidget.trackEvent('Error', 'Government Error', response.errors);
         } else {
           appWidget.government = response.data;
-          appWidget.selectedTab = (response.data.city_council && response.data.city_council.length > 0) ? 'city-council' : 'representatives';
+          appWidget.selectedTab = (response.data && response.data.city_council && response.data.city_council.length > 0) ? 'city-council' : 'representatives';
         }
       },
       error: function (jqXHR, textStatus, errorThrown) {
@@ -257,6 +257,18 @@ var appWidget = {
 
               if (!rep.full_name && rep.name) {
                 rep.full_name = rep.name;
+              }
+
+              if (!rep.district && rep.current_role && rep.current_role.district) {
+                rep.district = rep.current_role.district;
+              }
+
+              if (!rep.chamber && rep.current_role && rep.current_role.org_classification) {
+                rep.chamber = rep.current_role.org_classification;
+              }
+
+              if (!rep.photo_url && rep.image) {
+                rep.photo_url = rep.image;
               }
 
               var title;
@@ -455,7 +467,7 @@ var appWidget = {
             } else if (type === 'representative') {
               rep = response.results[id];
               chamber = response.results[id]['chamber'];
-              bills = response.bills[chamber] || [];
+              bills = (response.bills && response.bills[chamber]) ? response.bills[chamber] : [];
             } else if (type === 'senator') {
               rep = appWidget.government.senate[id];
               chamber = null;
@@ -489,7 +501,7 @@ var appWidget = {
             appWidget.trackEvent('Nav', 'Back Button', 'Main Page');
           });
 
-          if ((appWidget.government.city_council && appWidget.government.city_council.length > 0) || (appWidget.government.senate && appWidget.government.senate.length > 0) || (appWidget.government.house && appWidget.government.house.length > 0) || (appWidget.government.governor && appWidget.government.governor.length > 0)) {
+          if ((appWidget.government && appWidget.government.city_council && appWidget.government.city_council.length > 0) || (appWidget.government && appWidget.government.senate && appWidget.government.senate.length > 0) || (appWidget.government && appWidget.government.house && appWidget.government.house.length > 0) || (appWidget.government && appWidget.government.governor && appWidget.government.governor.length > 0)) {
 
             jQuery('a.tab-button', elm).removeClass('active');
             jQuery('#' + appWidget.selectedTab + '-button', elm).addClass('active');
@@ -520,7 +532,7 @@ var appWidget = {
             jQuery('.representatives-tab', elm).addClass('active');
           }
 
-          if (!appWidget.government.city_council || appWidget.government.city_council.length === 0) {
+          if (appWidget.government && (!appWidget.government.city_council || appWidget.government.city_council.length === 0)) {
             jQuery('a.tab-button', elm).removeClass('active');
             jQuery('#' + appWidget.selectedTab + '-button', elm).addClass('active');
 
