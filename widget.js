@@ -5,8 +5,8 @@
   var jqueryVersion = '1.12.3';
   var scriptTag;
   var pathLocal = './app/';
-  var pathCDN = 'https://s3.amazonaws.com/campaign-zero-widget/';
-  var elementName = 'campaign-zero-widget';
+  var pathCDN = 'https://s3.amazonaws.com/mapping-police-violence-widget/';
+  var elementName = 'mapping-police-violence-widget';
   var loadedCSS = false;
   var loadedJS = false;
   var version = '1.5.0';
@@ -104,7 +104,7 @@
     scriptTag = targetScripts[targetScripts.length - 1];
 
     // check if this is production
-    var assets = (scriptTag.src && scriptTag.src === 'https://embed.joincampaignzero.org/widget.js') ? pathCDN : pathLocal;
+    var assets = (scriptTag.src && scriptTag.src === 'https://embed.mappingpoliceviolence.us/widget.js') ? pathCDN : pathLocal;
 
     // load widget css before DOM ready
     loadCss(assets + 'style.css?v=' + version, function(){
@@ -123,7 +123,7 @@
 
       window.addEventListener('resize', resizeHandeler);
 
-      var isProduction = (scriptTag.src === 'https://embed.joincampaignzero.org/widget.js');
+      var isProduction = (scriptTag.src === 'https://embed.mappingpoliceviolence.us/widget.js');
 
       var validWidgetTypes = ['default', 'resistance'];
 
@@ -137,13 +137,13 @@
 
       var emailSubject = 'We need urgent action to end police violence in our district.';
       var emailGreeting = 'Greetings';
-      var emailBody = 'I\'m from your district, and police violence needs to be urgently addressed through comprehensive legislation as proposed by Campaign Zero.';
+      var emailBody = 'I\'m from your district, and police violence needs to be urgently addressed through comprehensive legislation as proposed by Mapping Police Violence.';
       var emailAction = '[YOUR_MESSAGE_HERE]';
 
-      var twitterText = 'Learn where your representatives stand on police violence and demand action now! http://JoinCampaignZero.org/action';
-      var twitterHashTags = 'CampaignZero';
+      var twitterText = 'Learn where your representatives stand on police violence and demand action now! https://mappingpoliceviolence.us';
+      var twitterHashTags = 'MappingPoliceViolence';
 
-      var facebookLink = 'http://www.joincampaignzero.org/action';
+      var facebookLink = 'https://mappingpoliceviolence.us';
       var facebookDescription = 'Learn where your representatives stand on police violence and demand action now!';
 
       var googleAnalytics = 'UA-77948909-1';
@@ -262,14 +262,14 @@
         googleAnalytics = scriptTag.getAttribute('data-widget-google-analytics');
       }
 
-      window.CAMPAIGN_ZERO_WIDGET = {
+      window.MAPPING_POLICE_VIOLENCE_WIDGET = {
         environment: isProduction ? 'production' : 'development',
-        base: isProduction ? 'https://embed.joincampaignzero.org/app/' : './app/',
-        data: isProduction ? 'https://embed.joincampaignzero.org/data/' : './data/',
+        base: isProduction ? 'https://embed.mappingpoliceviolence.us/app/' : './app/',
+        data: isProduction ? 'https://embed.mappingpoliceviolence.us/data/' : './data/',
         type: widgetType,
         api: {
-          base: isProduction ? 'https://api.civil.services/v1/' : 'http://127.0.0.1:5000/v1/',
-          key: isProduction ? '99BB6429-D251-6AF4-D9F2-6FE3D79DF034' : '7E07D864-209A-F9E4-819F-2DD7E76B6F24'
+          base: 'https://api.civil.services/v1/', // isProduction ? 'https://api.civil.services/v1/' : 'http://127.0.0.1:5000/v1/',
+          key: '99BB6429-D251-6AF4-D9F2-6FE3D79DF034'// isProduction ? '99BB6429-D251-6AF4-D9F2-6FE3D79DF034' : '7E07D864-209A-F9E4-819F-2DD7E76B6F24'
         },
         version: version,
         labels: {
@@ -304,8 +304,8 @@
       // Load Required Libraries first then init widget
       loadScript('https://www.google-analytics.com/analytics.js', function(){
         if(typeof window.ga !== 'undefined'){
-          ga('create', googleAnalytics, 'auto', 'campaignZeroWidget');
-          ga('campaignZeroWidget.send', 'pageview');
+          ga('create', googleAnalytics, 'auto', 'mappingPoliceViolenceWidget');
+          ga('mappingPoliceViolenceWidget.send', 'pageview');
         }
 
         // load widgets main app's script file

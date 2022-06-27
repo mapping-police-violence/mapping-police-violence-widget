@@ -2,26 +2,26 @@
 
 /* WIDGET STYLE RESET */
 
-#campaign-zero-widget div,
-#campaign-zero-widget span,
-#campaign-zero-widget h1,
-#campaign-zero-widget h2,
-#campaign-zero-widget h3,
-#campaign-zero-widget h4,
-#campaign-zero-widget h5,
-#campaign-zero-widget h6,
-#campaign-zero-widget p,
-#campaign-zero-widget a,
-#campaign-zero-widget img,
-#campaign-zero-widget strong,
-#campaign-zero-widget b,
-#campaign-zero-widget u,
-#campaign-zero-widget i,
-#campaign-zero-widget ol,
-#campaign-zero-widget ul,
-#campaign-zero-widget li,
-#campaign-zero-widget form,
-#campaign-zero-widget label {
+#mapping-police-violence-widget div,
+#mapping-police-violence-widget span,
+#mapping-police-violence-widget h1,
+#mapping-police-violence-widget h2,
+#mapping-police-violence-widget h3,
+#mapping-police-violence-widget h4,
+#mapping-police-violence-widget h5,
+#mapping-police-violence-widget h6,
+#mapping-police-violence-widget p,
+#mapping-police-violence-widget a,
+#mapping-police-violence-widget img,
+#mapping-police-violence-widget strong,
+#mapping-police-violence-widget b,
+#mapping-police-violence-widget u,
+#mapping-police-violence-widget i,
+#mapping-police-violence-widget ol,
+#mapping-police-violence-widget ul,
+#mapping-police-violence-widget li,
+#mapping-police-violence-widget form,
+#mapping-police-violence-widget label {
   margin: 0;
   padding: 0;
   border: 0;
@@ -31,10 +31,10 @@
   text-indent: 0;
 
 }
-#campaign-zero-widget i.fa {
+#mapping-police-violence-widget i.fa {
   font: normal normal normal 100%/1 FontAwesome;
 }
-#campaign-zero-widget ol,
-#campaign-zero-widget ul {
+#mapping-police-violence-widget ol,
+#mapping-police-violence-widget ul {
   list-style: none;
 }

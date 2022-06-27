@@ -5,7 +5,7 @@ deployment:
   prod:
     branch: master
     commands:
-      - aws s3 cp app/animate.css s3://campaign-zero-widget/animate.css --acl public-read
-      - aws s3 cp app/app.js s3://campaign-zero-widget/app.js --acl public-read
-      - aws s3 cp app/reset.css s3://campaign-zero-widget/reset.css --acl public-read
-      - aws s3 cp app/style.css s3://campaign-zero-widget/style.css --acl public-read
+      - aws s3 cp app/animate.css s3://mapping-police-violence-widget/animate.css --acl public-read
+      - aws s3 cp app/app.js s3://mapping-police-violence-widget/app.js --acl public-read
+      - aws s3 cp app/reset.css s3://mapping-police-violence-widget/reset.css --acl public-read
+      - aws s3 cp app/style.css s3://mapping-police-violence-widget/style.css --acl public-read

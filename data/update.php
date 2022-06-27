@@ -53,23 +53,23 @@ function update_file ($file, $name) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Campaign Zero - Update Widget</title>
+    <title>Mapping Police Violence - Update Widget</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <meta property="og:url" content="https://joincampaignzero.org" />
-    <meta property="og:title" content="Campaign Zero - Update Widget" />
+    <meta property="og:url" content="https://mappingpoliceviolence.us" />
+    <meta property="og:title" content="Mapping Police Violence - Update Widget" />
     <meta property="og:description" content="We can live in a world where the police don't kill people by limiting police interventions, improving community interactions, and ensuring accountability." />
-    <meta property="og:image" content="https://embed.joincampaignzero.org/app-image.gif" />
+    <meta property="og:image" content="https://embed.mappingpoliceviolence.us/app-image.gif" />
 
-    <meta name="twitter:image" content="https://embed.joincampaignzero.org/app-image.gif" />
+    <meta name="twitter:image" content="https://embed.mappingpoliceviolence.us/app-image.gif" />
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@samswey">
-    <meta name="twitter:domain" content="joincampaignzero.org">
+    <meta name="twitter:domain" content="mappingpoliceviolence.us">
     <meta name="twitter:creator" content="@mrmidi">
 
-    <link rel="shortcut icon" href="https://embed.joincampaignzero.org/favicon.ico" />
+    <link rel="shortcut icon" href="https://embed.mappingpoliceviolence.us/favicon.ico" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
 
@@ -106,7 +106,7 @@ function update_file ($file, $name) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div class="navbar-brand">Campaign Zero</div>
+                <div class="navbar-brand">Mapping Police Violence</div>
             </div>
 
             <div id="navbar" class="navbar-collapse collapse">
@@ -114,9 +114,9 @@ function update_file ($file, $name) {
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Data <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="https://bit.ly/campaign-zero-widget-bills" target="_blank">Bills</a></li>
-                            <li><a href="https://bit.ly/campaign-zero-widget-police" target="_blank">Police Killings</a></li>
-                            <li><a href="https://bit.ly/campaign-zero-widget-resistance" target="_blank">Resistance</a></li>
+                            <li><a href="https://bit.ly/mapping-police-violence-widget-bills" target="_blank">Bills</a></li>
+                            <li><a href="https://bit.ly/mapping-police-violence-widget-police" target="_blank">Police Killings</a></li>
+                            <li><a href="https://bit.ly/mapping-police-violence-widget-resistance" target="_blank">Resistance</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -128,7 +128,7 @@ function update_file ($file, $name) {
     <div class="container main" role="main">
       <?php if (!$update && $valid_token): ?>
         <div class="page-header">
-            <h1>Campaign Zero Data</h1>
+            <h1>Mapping Police Violence Data</h1>
         </div>
 
         <p><span class="label label-info">CURRENT</span>&nbsp; <a class='download-link' href='bills.csv' target='_blank'>bills.csv</a> downloaded &amp; widget updated</p>
@@ -138,7 +138,7 @@ function update_file ($file, $name) {
         <p><a href="update.php?update=true&token=<?= $_REQUEST['token']; ?>" type="button" class="btn btn-primary" onclick="return updateData()">Download Latest Data</a></p>
       <?php elseif ($update && $valid_token): ?>
         <div class="page-header">
-            <h1>Downloaded Campaign Zero Data</h1>
+            <h1>Downloaded Mapping Police Violence Data</h1>
         </div>
         <?= update_file($bills_url, 'bills'); ?>
         <?= update_file($police_killings_url, 'police_killings'); ?>

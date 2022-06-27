@@ -8,19 +8,19 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 
-    <meta property="og:url" content="https://joincampaignzero.org">
-    <meta property="og:title" content="Campaign Zero Widget">
+    <meta property="og:url" content="https://mappingpoliceviolence.us">
+    <meta property="og:title" content="Mapping Police Violence Widget">
     <meta property="og:description"
           content="We can live in a world where the police don't kill people by limiting police interventions, improving community interactions, and ensuring accountability."/>
-    <meta property="og:image" content="https://embed.joincampaignzero.org/app-image.gif">
+    <meta property="og:image" content="https://embed.mappingpoliceviolence.us/app-image.gif">
 
-    <meta name="twitter:image" content="https://embed.joincampaignzero.org/app-image.gif">
+    <meta name="twitter:image" content="https://embed.mappingpoliceviolence.us/app-image.gif">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@samswey">
-    <meta name="twitter:domain" content="joincampaignzero.org">
+    <meta name="twitter:domain" content="mappingpoliceviolence.us">
     <meta name="twitter:creator" content="@mrmidi">
 
-    <link rel="shortcut icon" href="https://embed.joincampaignzero.org/favicon.ico">
+    <link rel="shortcut icon" href="https://embed.mappingpoliceviolence.us/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
 
@@ -156,7 +156,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Email Body</label>
-                                    <textarea class="form-control" id="widget-email-body" placeholder="I'm from your district, and police violence needs to be urgently addressed through comprehensive legislation as proposed by Campaign Zero."></textarea>
+                                    <textarea class="form-control" id="widget-email-body" placeholder="I'm from your district, and police violence needs to be urgently addressed through comprehensive legislation as proposed by Mapping Police Violence."></textarea>
                                     <span class="help-block">This is the Body of the Email for sent to the Elected Official</span>
                                 </div>
                                 <div class="form-group">
@@ -181,12 +181,12 @@
                             <div class="panel-body">
                                 <div class="form-group">
                                     <label>Twitter Text</label>
-                                    <textarea class="form-control" id="widget-twitter-text" placeholder="Learn where your representatives stand on police violence and demand action now! http://JoinCampaignZero.org/action"></textarea>
+                                    <textarea class="form-control" id="widget-twitter-text" placeholder="Learn where your representatives stand on police violence and demand action now! https://mappingpoliceviolence.us"></textarea>
                                     <span class="help-block">This is the Message in Tweet</span>
                                 </div>
                                 <div class="form-group">
                                     <label>Twitter Hashtags</label>
-                                    <input type="text" class="form-control" id="widget-twitter-hashtags" placeholder="CampaignZero">
+                                    <input type="text" class="form-control" id="widget-twitter-hashtags" placeholder="MappingPoliceViolence">
                                     <span class="help-block">These are the Hashtags used in the Tweet, you can use more than one by using a comma between words</span>
                                 </div>
                             </div>
@@ -207,7 +207,7 @@
                             <div class="panel-body">
                                 <div class="form-group">
                                     <label>Facebook Link</label>
-                                    <input type="text" class="form-control" id="widget-facebook-link" placeholder="http://www.joincampaignzero.org/action">
+                                    <input type="text" class="form-control" id="widget-facebook-link" placeholder="https://mappingpoliceviolence.us">
                                     <span class="help-block">This is the URL you want to link to for the Facebook Post</span>
                                 </div>
                                 <div class="form-group">
@@ -251,7 +251,7 @@
                     </div>
 
                     <div class="form-group">
-                        <pre><code class="html">&lt;script async src="https://embed.joincampaignzero.org/widget.js" charset="utf-8">&lt;/script></code></pre>
+                        <pre><code class="html">&lt;script async src="https://embed.mappingpoliceviolence.us/widget.js" charset="utf-8">&lt;/script></code></pre>
                         <span class="help-block">Place this <code>&lt;script></code> just before the closing <code>&lt;/body></code> tag.</span>
                     </div>
                 </div>
@@ -336,15 +336,15 @@
 
       $('.markup').hide();
       if (jQuery('#split-markup:checked').length === 1) {
-        $('#div-markup-custom').text('<div id="campaign-zero-widget"' + attributes + '></div>');
+        $('#div-markup-custom').text('<div id="mapping-police-violence-widget"' + attributes + '></div>');
         $('#markup-custom').show();
       } else {
-        $('#script-markup').text('<scr' + 'ipt async src="https://embed.joincampaignzero.org/widget.js" charset="utf-8"' + attributes + '></scr' + 'ipt>');
+        $('#script-markup').text('<scr' + 'ipt async src="https://embed.mappingpoliceviolence.us/widget.js" charset="utf-8"' + attributes + '></scr' + 'ipt>');
         $('#markup').show();
       }
 
-      $('#widget-preview').html('<div id="campaign-zero-widget"' + attributes + '></div>');
-      loadScript('https://embed.joincampaignzero.org/widget.js?ac=' + Date.now())
+      $('#widget-preview').html('<div id="mapping-police-violence-widget"' + attributes + '></div>');
+      loadScript('https://embed.mappingpoliceviolence.us/widget.js?ac=' + Date.now())
 
       $('pre code').each(function (i, block) {
         $(block).removeClass('hljs xml');

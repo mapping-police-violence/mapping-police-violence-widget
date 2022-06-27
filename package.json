@@ -1,13 +1,13 @@
 {
-  "name": "campaign-zero-widget",
+  "name": "mapping-police-violence-widget",
   "version": "1.5.0",
-  "description": "Campaign Zero Widget",
-  "homepage": "https://github.com/campaignzero/campaign-zero-widget#readme",
+  "description": "Mapping Police Violence Widget",
+  "homepage": "https://github.com/mapping-police-violence/mapping-police-violence-widget#readme",
   "license": "MIT",
   "main": "widget.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/campaignzero/campaign-zero-widget.git"
+    "url": "git+https://github.com/mapping-police-violence/mapping-police-violence-widget.git"
   },
   "author": {
     "name": "Peter Schmalfeldt",
@@ -17,10 +17,10 @@
   "contributors": [
     {
       "name": "Samuel Sinyangwe",
-      "url": "https://joincampaignzero.org"
+      "url": "https://mappingpoliceviolence.us"
     }
   ],
   "bugs": {
-    "url": "https://github.com/campaignzero/campaign-zero-widget/issues"
+    "url": "https://github.com/mapping-police-violence/mapping-police-violence-widget/issues"
   }
 }

@@ -2,11 +2,11 @@ var appWidget = {
 
   timeout: null,
   promptedCityData: false,
-  elementName: 'campaign-zero-widget',
+  elementName: 'mapping-police-violence-widget',
   selectedTab: 'representatives',
   storedResponse: {},
   storedLocation: {},
-  settings: window.CAMPAIGN_ZERO_WIDGET,
+  settings: window.MAPPING_POLICE_VIOLENCE_WIDGET,
 
   /**
    * Track Event using Google Analytics
@@ -17,7 +17,7 @@ var appWidget = {
    */
   trackEvent: function (category, action, label, value) {
     if (typeof window.ga !== 'undefined') {
-      ga('campaignZeroWidget.send', 'event', category, action, label, value);
+      ga('mappingPoliceViolenceWidget.send', 'event', category, action, label, value);
     }
   },
 
@@ -298,8 +298,7 @@ var appWidget = {
               }
 
               if (typeof rep.photo_url !== 'undefined' && rep.photo_url !== '') {
-                var image = (rep.photo_url).startsWith('https://') ? rep.photo_url : 'https://proxy.joincampaignzero.org/' + rep.photo_url;
-                jQuery('.representative-summary .avatar', $li).css('background-image', 'url(' + image + ')');
+                jQuery('.representative-summary .avatar', $li).css('background-image', 'url(' + rep.photo_url + ')');
               }
 
               jQuery('ul.representatives', elm).append($li);
@@ -332,8 +331,7 @@ var appWidget = {
               jQuery('.summary-details .chamber, .summary-details .chamber-label', $li).hide();
 
               if (typeof rep.photo_url !== 'undefined' && rep.photo_url !== '') {
-                var image = (rep.photo_url).startsWith('https://') ? rep.photo_url : 'https://proxy.joincampaignzero.org/' + rep.photo_url;
-                jQuery('.representative-summary .avatar', $li).css('background-image', 'url(' + image + ')');
+                jQuery('.representative-summary .avatar', $li).css('background-image', 'url(' + rep.photo_url + ')');
               }
 
               // fix for issue #10 to set order in which city council members are ordered
@@ -374,8 +372,7 @@ var appWidget = {
               }
 
               if (typeof rep.photo_url !== 'undefined' && rep.photo_url !== '') {
-                var image = (rep.photo_url).startsWith('https://') ? rep.photo_url : 'https://proxy.joincampaignzero.org/' + rep.photo_url;
-                jQuery('.representative-summary .avatar', $li).css('background-image', 'url(' + image + ')');
+                jQuery('.representative-summary .avatar', $li).css('background-image', 'url(' + rep.photo_url + ')');
               }
 
               jQuery('ul.federal', elm).append($li);
@@ -404,8 +401,7 @@ var appWidget = {
               jQuery('.summary-details .chamber, .summary-details .chamber-label', $li).hide();
 
               if (typeof rep.photo_url !== 'undefined' && rep.photo_url !== '') {
-                var image = (rep.photo_url).startsWith('https://') ? rep.photo_url : 'https://proxy.joincampaignzero.org/' + rep.photo_url;
-                jQuery('.representative-summary .avatar', $li).css('background-image', 'url(' + image + ')');
+                jQuery('.representative-summary .avatar', $li).css('background-image', 'url(' + rep.photo_url + ')');
               }
 
               jQuery('ul.representatives', elm).append($li);
@@ -438,8 +434,7 @@ var appWidget = {
               jQuery('.summary-details .chamber, .summary-details .chamber-label', $li).hide();
 
                if (typeof rep.photo_url !== 'undefined' && rep.photo_url !== '') {
-                var image = (rep.photo_url).startsWith('https://') ? rep.photo_url : 'https://proxy.joincampaignzero.org/' + rep.photo_url;
-                jQuery('.representative-summary .avatar', $li).css('background-image', 'url(' + image + ')');
+                jQuery('.representative-summary .avatar', $li).css('background-image', 'url(' + rep.photo_url + ')');
                }
 
               jQuery('ul.federal', elm).append($li);
@@ -588,7 +583,7 @@ var appWidget = {
 
       if(killings && killings.count > 0 && appWidget.settings.type === 'default') {
         var label = (killings.count === 1) ? 'person' : 'people';
-        emailMessage = encodeURIComponent(appWidget.settings.email.greeting + " " + rep.full_name +  ",\r\n\r\n" + appWidget.settings.email.body + " In 2016, police in " + killings.state + " have killed at least " + killings.count + " " + label + ". We need comprehensive legislation to make deadly force a last resort for police officers, establish alternative responses to minor offenses, demilitarize police departments, ensure independent investigations and prosecutions of police killings, as well as other solutions proposed by Campaign Zero.\r\n\r\n" + appWidget.settings.email.action);
+        emailMessage = encodeURIComponent(appWidget.settings.email.greeting + " " + rep.full_name +  ",\r\n\r\n" + appWidget.settings.email.body + " In 2016, police in " + killings.state + " have killed at least " + killings.count + " " + label + ". We need comprehensive legislation to make deadly force a last resort for police officers, establish alternative responses to minor offenses, demilitarize police departments, ensure independent investigations and prosecutions of police killings, as well as other solutions proposed by Mapping Police Violence.\r\n\r\n" + appWidget.settings.email.action);
       } else {
         emailMessage = encodeURIComponent(appWidget.settings.email.greeting + " " + rep.full_name +  ",\r\n\r\n" + appWidget.settings.email.body + "\r\n\r\n" + appWidget.settings.email.action);
       }
@@ -606,8 +601,7 @@ var appWidget = {
       }
 
       if (typeof rep.photo_url !== 'undefined' && rep.photo_url !== '') {
-        var image = (rep.photo_url).startsWith('https://') ? rep.photo_url : 'https://proxy.joincampaignzero.org/' + rep.photo_url;
-        jQuery('#rep-image', elm).addClass(rep.party.toLowerCase()).css('background-image', 'url(' + image + ')');
+        jQuery('#rep-image', elm).addClass(rep.party.toLowerCase()).css('background-image', 'url(' + rep.photo_url + ')');
       }
 
       if (!rep.full_name && rep.name) {
@@ -744,6 +738,8 @@ var appWidget = {
           }
 
           appWidget.getRepresentatives(geolocation);
+        } else {
+          appWidget.showError('Address Invalid. Please Try Again.');
         }
       },
       error: function (jqXHR, textStatus, errorThrown) {
@@ -913,8 +909,8 @@ var appWidget = {
 
       jQuery('.wrapper', elm).show();
 
-      jQuery('#campaign-zero-form', elm).off('submit.widget');
-      jQuery('#campaign-zero-form', elm).on('submit.widget', function (event) {
+      jQuery('#mapping-police-violence-form', elm).off('submit.widget');
+      jQuery('#mapping-police-violence-form', elm).on('submit.widget', function (event) {
 
         jQuery('button.submit', elm).attr('disabled', 'disabled').html('<i class="fa fa-circle-o-notch fa-spin fa-fw"></i> Loading');
 
